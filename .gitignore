@@ -1,0 +1,8 @@
+/*.sublime-workspace
+/app/temp/*
+/app/log/*
+/assets/css/*
+/assets/bower_components/*
+/assets/js/build/*
+/node_modules/*
+!/assets/js/build/build.json

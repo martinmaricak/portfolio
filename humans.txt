@@ -1,0 +1,19 @@
+/* TEAM */
+	Author: Martin Maricak
+	Site: maricak.sk
+	Twitter: @martinmaricak
+	Location: Kosice, Slovak Republic
+
+
+/* THANKS */
+
+
+/* SITE */
+	Standards: HTML5, CSS3
+	Software: Adobe Photoshop, Node.js
+
+
+=====
+
+What is this file?
+http://humanstxt.org

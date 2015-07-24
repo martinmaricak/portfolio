@@ -1,0 +1,19 @@
+{
+  "name": "Loaclhost",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Presentation website for localhost",
+  "author": "Martin Maricak",
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-less": "2.0.*",
+    "gulp-sass": "2.0.*",
+    "gulp-concat": "2.4.*",
+    "gulp-concat": "2.4.*",
+    "gulp-minify-css": "0.3.*",
+    "gulp-load-plugins": "0.8.*",
+    "gulp-uncss": "0.5.*",
+    "gulp-uglify": "1.0.*",
+    "glob": "4.3.*"
+  }
+}

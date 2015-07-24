@@ -1,0 +1,10 @@
+{
+  "name": "Website",
+  "private": true,
+  "version": "0.0.1",
+  "author": "Martin Maricak",
+  "dependencies": {
+    "normalize.css": "~3.0.2",
+    "material-design-lite": "~1.0.1"
+  }
+}

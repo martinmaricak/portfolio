@@ -11,13 +11,26 @@ var gulp = require('gulp'),
 			jsFileList: require('./assets/js/build/build.json'),
 			indexHtml: './index.html'
 		}
-	};
+	},
+
+	AUTOPREFIXER_BROWSERS = [
+		'ie >= 10',
+		'ie_mob >= 10',
+		'ff >= 30',
+		'chrome >= 34',
+		'safari >= 7',
+		'opera >= 23',
+		'ios >= 7',
+		'android >= 4.4',
+		'bb >= 10'
+	];
 
 
 gulp.task('styles', function () {
 	gulp.src(opts.paths.scssMainFile)
 		.pipe(plugins.sass())
 		.pipe(plugins.uncss({html: glob.sync(opts.paths.indexHtml)}))
+		.pipe(plugins.autoprefixer(AUTOPREFIXER_BROWSERS))
 		.pipe(plugins.minifyCss({processImport: true}))
 		.pipe(gulp.dest(opts.paths.cssDistFolder));
 });

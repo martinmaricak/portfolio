@@ -2,6 +2,7 @@
 /app/temp/*
 /app/log/*
 /assets/css/*
+/assets/fonts/*
 /assets/bower_components/*
 /assets/js/build/*
 /node_modules/*

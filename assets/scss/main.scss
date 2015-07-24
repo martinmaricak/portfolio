@@ -1,0 +1,324 @@
+@import "../bower_components/normalize.css/normalize.css";
+@import "fonts";
+@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/scaffolding";
+@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/glyphicons";
+@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/grid";
+
+html {
+    font-family: "GeomanistLight", sans-serif;
+}
+
+ img {
+    max-width: 100%;
+}
+
+@mixin typo-headline() {
+    margin: 0 0 80px;
+    font-family: "GeomanistBlack", sans-serif;
+    font-size: 4em;
+    line-height: 1.38;
+    color: #1f1f1f;
+}
+
+@mixin typo-text() {
+    margin: 0;
+    font-family: "GeomanistLight", sans-serif;
+    font-size: 1.5em;
+    line-height: 1.92;
+    color: #1f1f1f;
+}
+
+@mixin typo-bold() {
+    font-family: "GeomanistMedium", sans-serif;
+    margin: 0;
+    font-size: 1.5em;
+    line-height: 1.92;
+    color: #1f1f1f;
+}
+
+.typo-headline, h1, h2 {
+    @include typo-headline();
+}
+
+.typo-text, p {
+    @include typo-text();
+}
+
+.typo-bold {
+    @include typo-bold();
+}
+
+strong {
+    font-family: GeomanistMedium
+}
+
+.grey {
+    color: #ddd;
+}
+
+.main {
+    position: relative;
+}
+
+.page {
+    transition: all .8s ease-in;
+    opacity: 0;
+    transform: translate(0px, 16px); 
+}
+
+.page.active {
+    opacity: 1;
+    transform: translate(0px, 0px);
+}
+
+.artwork-holder {
+    position: absolute;
+    width: calc(100% - 30px);
+    height: 800px;
+    background: url('../img/artwork-lg.png') 0 0 scroll no-repeat transparent;
+    background-size: 100%;
+}
+
+.artwork-holder > img {
+    display: none;
+}
+
+.intro-section {
+    padding-top: 300px;
+}
+
+@media all and (max-width: $screen-md-max) {
+    .artwork-holder {
+        background-image: url('../img/artwork-md.png');
+    }
+
+    .intro-section {
+        padding-top: 176px;
+    }
+}
+
+@media all and (max-width: $screen-sm-max) {
+    .artwork-holder {
+        position: static;
+        height: auto;
+        background: transparent;
+    }
+
+    .artwork-holder > img {
+        display: block;
+    }
+
+    .intro-section {
+        padding-top: 0;
+    }
+}
+
+.section {
+    @include clearfix();
+    margin-bottom: 160px;
+}
+
+.navigation {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.menu {
+    margin-top: 40px;
+    text-align: right;
+}
+
+.menu__item {
+    display: inline-block;
+    margin-left: 40px;
+}
+
+@media all and (max-width: $screen-md-min) {
+    .menu {
+        display: none;
+    }
+ }
+
+.content {
+    width: 80%;
+    margin-bottom: 40px;
+}
+
+.avatar {
+    max-width: 48px;
+    max-height: 48px;
+    margin-right: 24px;
+}
+
+.by-line {
+    vertical-align: middle;
+}
+
+.work-item {
+    position: relative;
+    margin-bottom: 32px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.cover {
+    position: absolute;
+    width: calc(100% - 30px);
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 5;
+    transition: all 0.3s ease-in;
+    opacity: 0;
+}
+
+.work-item:hover .cover {
+    opacity: 1;
+}
+
+.work-icon {
+    position: absolute;
+    top: 50%;
+    left:50%;
+    font-size: 32px;
+    margin-top: -16px;
+    margin-left: -16px;
+    color: #fff;
+    z-index: 10;
+    transition: all 0.4s ease-in;
+    transform: scale(0.5, 0.5);
+    opacity: 0;
+}
+
+.work-item:hover .work-icon {
+    transform: scale(1, 1);
+    opacity: 1;
+}
+
+.contact-headline {
+    text-align: left;
+}
+
+.contact-item {
+    @include typo-bold();
+    display: inline-block;
+    margin-right: 40px;
+}
+
+.contact-item:last-child {
+    margin-right: 0;
+}
+
+.mail {
+    margin-right: 64px;
+}
+
+.btn {
+    border: 6px solid #1f1f1f;
+    padding: 16px 24px;
+}
+
+.btn:hover {
+    color: #fff;
+    background-color: #1f1f1f;
+    text-decoration: none;
+}
+
+.mail-button {
+    transition: all .8s ease-in-out;
+    display: block;
+    width: 64px;
+    height: 64px;
+    position: fixed;
+    bottom: -64px;
+    right: 24px;
+    border-radius: 100%;
+    background: url('../img/mail.svg') no-repeat scroll center center #000;
+    background-size: 38px 38px;
+    z-index: 50;
+}
+
+.active.mail-button:hover {
+    transform: scale(0.9, 0.9);
+}
+
+.mail-button.active {
+    bottom: 24px;
+    transform: rotate(360deg);
+}
+
+@media all and (max-width: $screen-sm-max) {
+    .main-headline, .contact-headline {
+        font-size: 3.5em;
+    }
+
+    .btn {
+        padding: 12px 16px;
+    }
+
+    .mail {
+        margin-right: 32px;
+    }
+}
+
+@media all and (max-width: $screen-sm-min) {
+    body {
+        font-size: 12px;
+    }
+
+    br {
+        display: none;
+    }
+
+    .contact-section {
+        text-align: center;
+    }
+
+    .contact-item {
+        display: block;
+        margin: 0 0 40px;
+    }
+
+    .contact-item.btn {
+        display: inline-block;
+    }
+}
+
+@media all and (min-width: $screen-md-max) {
+    body {
+        font-size: 16px;
+    }
+ }
+
+
+@media all and (max-width: 420px) {
+    body {
+        font-size: 10px;
+    }
+
+    .section {
+        margin-bottom: 80px;
+    }
+
+    .typo-headline, h1, h2 {
+        font-size: 3em;
+        margin-bottom: 40px;
+    }
+
+    .main-headline, .contact-headline {
+        font-size: 2.5em;
+    }
+
+    .content {
+        width: 100%;
+        margin-bottom: 24px;
+    }
+
+    .avatar {
+        max-width: 40px;
+        max-height: 40px;
+        margin-right: 16px;
+    }
+}

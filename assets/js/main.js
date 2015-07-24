@@ -1,7 +1,7 @@
 $(document).ready(function main() {
 
     window.setTimeout(function () {
-        $('.page').addClass('active');
+        $('.page').addClass('js-active');
     }, 200);
 
     $(function () {
@@ -26,9 +26,9 @@ $(document).ready(function main() {
     window.setInterval(function () {
         var scroll = $(window).scrollTop();
         if((scroll > 20 && scroll < contact)) {
-            $mailBtn.addClass('active');
-        } else if($mailBtn.hasClass('active')) {
-            $mailBtn.removeClass('active');
+            $mailBtn.addClass('js-active');
+        } else if($mailBtn.hasClass('js-active')) {
+            $mailBtn.removeClass('js-active');
         }
     }, 100)
 });

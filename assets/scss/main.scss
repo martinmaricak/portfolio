@@ -68,7 +68,8 @@ strong {
     transform: translate(0px, 16px); 
 }
 
-.page.active {
+/* uncss:ignore */
+.page.js-active {
     opacity: 1;
     transform: translate(0px, 0px);
 }
@@ -228,6 +229,7 @@ strong {
 
 .mail-button {
     transition: all .8s ease-in-out;
+    transform: rotate(180deg);
     display: block;
     width: 64px;
     height: 64px;
@@ -240,11 +242,13 @@ strong {
     z-index: 50;
 }
 
-.active.mail-button:hover {
+/* uncss:ignore */
+.js-active.mail-button:hover {
     transform: scale(0.9, 0.9);
 }
 
-.mail-button.active {
+/* uncss:ignore */
+.mail-button.js-active {
     bottom: 24px;
     transform: rotate(360deg);
 }

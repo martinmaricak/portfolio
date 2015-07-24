@@ -29,7 +29,12 @@ var gulp = require('gulp'),
 gulp.task('styles', function () {
 	gulp.src(opts.paths.scssMainFile)
 		.pipe(plugins.sass())
-		.pipe(plugins.uncss({html: glob.sync(opts.paths.indexHtml)}))
+		/*.pipe(plugins.uncss({
+			html: glob.sync(opts.paths.indexHtml),
+			ignore: [
+				'/js-active/'
+			]
+		}))*/
 		.pipe(plugins.autoprefixer(AUTOPREFIXER_BROWSERS))
 		.pipe(plugins.minifyCss({processImport: true}))
 		.pipe(gulp.dest(opts.paths.cssDistFolder));

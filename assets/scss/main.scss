@@ -51,7 +51,8 @@ html {
 }
 
 strong {
-    font-family: GeomanistMedium
+    font-family: "GeomanistBook";
+    font-weight: normal;
 }
 
 .grey {
@@ -143,9 +144,30 @@ strong {
     }
  }
 
-.content {
+.content, .hidden-content.js-visible {
     width: 80%;
+    margin-bottom: 16px;
+}
+
+.paragraph {
     margin-bottom: 40px;
+}
+
+.paragraph:last-child {
+    margin-bottom: 0;
+}
+
+.hidden-content {
+    transition: all 1s ease-in;
+    transition-property: height, opacity, margin;
+    opacity: 0;
+    height: 0px;
+}
+
+.hidden-content.js-visible {
+    margin: 40px 0;
+    opacity: 1;
+    height: auto;
 }
 
 .avatar {
@@ -159,6 +181,7 @@ strong {
 }
 
 .work-item {
+    display: block;
     position: relative;
     margin-bottom: 32px;
     cursor: pointer;
@@ -217,6 +240,8 @@ strong {
 }
 
 .btn {
+    display: inline-block;
+    color: #1f1f1f;
     border: 6px solid #1f1f1f;
     padding: 16px 24px;
 }
@@ -315,7 +340,7 @@ strong {
         font-size: 2.5em;
     }
 
-    .content {
+    .content, .hidden-content.js-visible {
         width: 100%;
         margin-bottom: 24px;
     }

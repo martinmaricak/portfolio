@@ -2,19 +2,17 @@ $(document).ready(function main() {
 
   var $hiddenContent = $('.hidden-content'),
       $readMore = $('.read-more'),
+      $contactSection = $('.contact-section'),
+      $mailBtn = $('.mail-button'),
 
       height   = 0,
-      contact  = 0,
-      $mailBtn = $('.mail-button');
+      contact  = 0;
 
-  function evaluateHeights () {
-    height   = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-    contact  = $('.contact-section').position().top - height;
-  }
 
   window.setTimeout(function () {
       $('.page').addClass('js-active');
   }, 200);
+
 
   $(function () {
     $('a[href*=#]:not([href=#])').click(function() {
@@ -31,15 +29,22 @@ $(document).ready(function main() {
     });
   });
 
+
+  function evaluateHeights () {
+    height   = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    contact  = parseInt((($contactSection.position().top  + ($contactSection.height() / 2)) - height).toFixed());
+  }
+
+
   $($readMore.find('a')).on('click', function (e) {
     e.preventDefault();
-    var $this = $(this);
     if (!$hiddenContent.hasClass('js-visible')) {
       $hiddenContent.addClass('js-visible');
       $readMore.remove();
       evaluateHeights();
     }
   });
+
 
   evaluateHeights();
   window.setInterval(function () {

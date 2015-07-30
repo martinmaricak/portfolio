@@ -162,12 +162,14 @@ strong {
     transition-property: height, opacity, margin;
     opacity: 0;
     height: 0px;
+    overflow: hidden;
 }
 
 .hidden-content.js-visible {
     margin: 40px 0;
     opacity: 1;
     height: auto;
+    overflow: visible;
 }
 
 .avatar {
